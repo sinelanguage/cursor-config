@@ -39,8 +39,10 @@ jobs:
           echo "COVERAGE=$coverage" >> $GITHUB_ENV
           echo "coverage=$coverage" >> $GITHUB_OUTPUT
 
+      # Optional: Upload to Codecov (requires CODECOV_TOKEN secret)
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
+        continue-on-error: true
         with:
           files: ./coverage/lcov.info
           flags: unittests
