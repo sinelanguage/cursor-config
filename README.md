@@ -1,6 +1,10 @@
 # Elite Frontend Cursor AI Setup
 
+> **Version**: See [latest release](https://github.com/your-org/cursor-config/releases/latest) | [CHANGELOG.md](CHANGELOG.md) | Standards evolve over time - check git tags for version tracking
+
 A comprehensive Cursor AI configuration for elite frontend development, featuring modern TypeScript, React 18+, Module Federation, enterprise-grade testing, security, and accessibility standards.
+
+**Note**: This configuration follows semantic versioning (SemVer). See [CHANGELOG.md](CHANGELOG.md) for detailed change history and use git tags to track specific versions of these standards.
 
 ## What This Is
 
@@ -375,6 +379,7 @@ This configuration is provided as-is for use in your projects.
 - [Contributing Guide](CONTRIBUTING.md)
 - [Architecture](ARCHITECTURE.md)
 - [Context Documentation](.context/)
+- [Changelog](CHANGELOG.md) - Version history and changes
 
 ## Support
 

@@ -434,7 +434,7 @@ export const Slot = ({ before, children, after }: SlotProps) => (
 
 ## ShadCN Component Integration
 
-### Overview
+### ShadCN Overview
 
 ShadCN UI uses a **copy-paste approach** (non buy-in way) where components are copied directly into your codebase. This means you own the code and can customize it without being locked into a package dependency.
 
@@ -500,7 +500,7 @@ npx shadcn@latest add button --style=new-york
 
 After adding components, structure looks like:
 
-```
+```text
 src/
 ├── components/
 │   ├── ui/
@@ -560,7 +560,7 @@ function MyComponent() {
 
 **After copying, components are fully customizable**:
 
-1. **Modify Variants**:
+**1. Modify Variants:**
 
 ```typescript
 // components/ui/button.tsx
@@ -592,7 +592,7 @@ const buttonVariants = cva(
 )
 ```
 
-2. **Extend Component Props**:
+**2. Extend Component Props:**
 
 ```typescript
 // components/ui/button.tsx
@@ -621,7 +621,7 @@ export const Button = forwardRef<HTMLButtonElement, CustomButtonProps>(
 )
 ```
 
-3. **Compose with Your Components**:
+**3. Compose with Your Components:**
 
 ```typescript
 // components/ProductCard.tsx
@@ -796,7 +796,7 @@ function FilterBar() {
 
 ## Radix UI Primitive Patterns
 
-### Overview
+### Radix UI Overview
 
 Radix UI provides unstyled, accessible component primitives that ShadCN components are built upon. You can use Radix UI primitives directly when you need custom implementations or when ShadCN doesn't have a component you need.
 
@@ -1096,7 +1096,7 @@ Radix UI primitives include:
 </Dialog.Content>
 ```
 
-### Type Safety
+### Radix UI Type Safety
 
 Radix UI primitives are fully typed:
 
@@ -1116,7 +1116,7 @@ const handleOpenChange = (open: boolean) => {
 }
 ```
 
-### Best Practices
+### Radix UI Best Practices
 
 1. **Use `asChild` prop**: When you want to use your own element as the trigger
 2. **Style with data attributes**: Use Radix UI's data attributes for state-based styling

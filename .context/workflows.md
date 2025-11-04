@@ -138,6 +138,7 @@ to services/api/client.ts for better maintainability.
 - [ ] Storybook stories added/updated
 - [ ] Documentation updated if needed
 - [ ] Commit messages follow convention
+- [ ] Changelog updated (for releases or significant merges)
 
 ### PR Description Template
 
@@ -307,49 +308,128 @@ Follow [SemVer](https://semver.org/): `MAJOR.MINOR.PATCH`
    git checkout -b release/v1.2.0
    ```
 
-2. **Update version**
+2. **Update version and changelog**
    ```bash
+   # Update CHANGELOG.md with new version entry
+   # Follow Keep a Changelog format (see CHANGELOG.md)
+   
    npm version minor  # or patch, major
    # This updates package.json and creates a commit
    ```
 
 3. **Create release PR**
+   - Include changelog updates in PR
    - Merge to main
    - CI/CD runs full test suite
 
-4. **Tag release**
+4. **Tag release (MANDATORY)**
    ```bash
+   # Tag MUST follow SemVer format: vMAJOR.MINOR.PATCH
    git tag v1.2.0
    git push origin v1.2.0
+   
+   # Verify tag was created
+   git tag -l
    ```
 
 5. **GitHub/GitLab release**
    - Create release from tag
-   - Add release notes
-   - Publish
+   - Release notes are automatically generated from CHANGELOG.md
+   - Publish release
 
-### Release Notes
+**Important**: All releases MUST be tagged. Tags are used for version tracking and allow users to reference specific versions of these standards.
 
-Generate from commit messages:
-```bash
-npm run release
-# Creates CHANGELOG.md from conventional commits
-```
+### Changelog Requirements
 
-Template:
+**MANDATORY**: All releases and significant merges must update `CHANGELOG.md`.
+
+**Format**: Follow [Keep a Changelog](https://keepachangelog.com/) format:
+
 ```markdown
-# v1.2.0 (2025-01-15)
+## [1.2.0] - 2025-01-15
 
-## Features
-- feat(button): add loading state to primary button (#123)
-- feat(modal): support focus trap for accessibility (#456)
+### Added
+- New feature description
+- Another feature
 
-## Bug Fixes
-- fix(chart): resolve memory leak in data updates (#789)
+### Changed
+- Change description
 
-## Documentation
-- docs: update installation guide (#012)
+### Fixed
+- Bug fix description
+
+### Security
+- Security fix description
 ```
+
+**Changelog Maintenance**:
+
+1. **During Development**: Update `CHANGELOG.md` in the same PR as your changes
+2. **For Releases**: Create a dedicated changelog entry under `[Unreleased]` or new version section
+3. **Before Release**: Move items from `[Unreleased]` to versioned section
+4. **Format**: Use conventional commit types to categorize changes (Added, Changed, Deprecated, Removed, Fixed, Security)
+
+**When to Update Changelog**:
+
+- All releases (MAJOR, MINOR, PATCH)
+- Significant merges that affect standards or conventions
+- Breaking changes (always document)
+- New features or capabilities
+- Security updates
+
+### Git Tagging Best Practices
+
+**Tag Naming Convention**:
+
+- Format: `vMAJOR.MINOR.PATCH` (e.g., `v1.2.0`)
+- Must match SemVer version in package.json
+- Always use `v` prefix
+- Follow semantic versioning rules strictly
+
+**When to Tag**:
+
+- **Every release** (MAJOR, MINOR, PATCH)
+- **After merging release PR** to main
+- **Before publishing** to GitHub/GitLab releases
+
+**Tag Workflow**:
+
+```bash
+# 1. Ensure you're on the release commit
+git checkout main
+git pull origin main
+
+# 2. Tag the release
+git tag -a v1.2.0 -m "Release version 1.2.0"
+# Or use lightweight tag
+git tag v1.2.0
+
+# 3. Push tags
+git push origin v1.2.0
+# Or push all tags
+git push origin --tags
+
+# 4. Verify
+git tag -l
+git show v1.2.0
+```
+
+**Tag Annotation** (Recommended):
+
+```bash
+git tag -a v1.2.0 -m "Release v1.2.0
+
+- Added ShadCN UI component support
+- Updated TypeScript configuration
+- Fixed accessibility issues"
+```
+
+**Tag Management**:
+
+- Never delete or force-push tags (they're permanent references)
+- Use annotated tags for releases (include metadata)
+- Tag from main branch after merge
+- Include tag in release notes on GitHub/GitLab
 
 ## Hotfix Process
 
@@ -384,10 +464,12 @@ Template:
    git merge main
    ```
 
-5. **Tag release**
+5. **Update changelog and tag release**
    ```bash
+   # Update CHANGELOG.md with hotfix entry
    npm version patch
    git tag v1.2.1
+   git push origin v1.2.1
    ```
 
 6. **Deploy immediately**

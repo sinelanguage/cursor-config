@@ -6,7 +6,7 @@
 
 **Components**: PascalCase with component name matching file name
 
-```
+```text
 Button.tsx
 UserProfile.tsx
 NavigationMenu.tsx
@@ -14,7 +14,7 @@ NavigationMenu.tsx
 
 **Utilities**: camelCase
 
-```
+```text
 formatDate.ts
 debounce.ts
 apiClient.ts
@@ -22,7 +22,7 @@ apiClient.ts
 
 **Hooks**: camelCase with `use` prefix
 
-```
+```text
 useAuth.ts
 useLocalStorage.ts
 useDebounce.ts
@@ -30,7 +30,7 @@ useDebounce.ts
 
 **Types**: camelCase for files, PascalCase for types
 
-```
+```text
 types.ts (file)
 types/
   user.types.ts
@@ -43,7 +43,7 @@ export type ApiResponse<T> = { ... }
 
 **Constants**: camelCase for config, UPPER_SNAKE_CASE for true constants
 
-```
+```text
 apiConfig.ts (file)
 export const API_CONFIG = { ... } // const values
 
@@ -54,7 +54,7 @@ export const API_TIMEOUT = 5000
 
 **Tests**: Match source file name with `.test` or `.spec`
 
-```
+```text
 Button.test.tsx
 Button.spec.tsx
 useAuth.test.ts
@@ -62,7 +62,7 @@ useAuth.test.ts
 
 **Stories**: Same name as component with `.stories`
 
-```
+```text
 Button.stories.tsx
 ```
 
@@ -70,7 +70,7 @@ Button.stories.tsx
 
 **Flat structure** preferred for small collections:
 
-```
+```text
 components/
   Button.tsx
   Card.tsx
@@ -79,7 +79,7 @@ components/
 
 **Grouped structure** for large collections:
 
-```
+```text
 components/
   Button/
     Button.tsx
@@ -95,7 +95,7 @@ components/
 
 **Feature-based organization** for large apps:
 
-```
+```text
 features/
   auth/
     components/
@@ -113,7 +113,7 @@ features/
 
 **ShadCN components** (copied from shadcn/ui) should be placed in a dedicated `ui/` directory:
 
-```
+```text
 src/
   components/
     ui/                    # ShadCN components (copy-paste)
@@ -137,7 +137,7 @@ src/
 
 **Component Structure**:
 
-```
+```text
 components/
   ui/                      # ShadCN components (do not modify structure)
     button.tsx             # ShadCN Button
@@ -157,7 +157,7 @@ components/
 
 **Example - Customizing ShadCN Components**:
 
-```
+```text
 components/
   ui/
     button.tsx              # ShadCN Button (customized after copy)
@@ -166,7 +166,7 @@ components/
 
 **Utility Functions**:
 
-```
+```text
 lib/
   utils.ts                  # cn() utility function (from ShadCN setup)
 ```
@@ -279,7 +279,7 @@ export type { ButtonProps }
 
 For complex components with multiple files:
 
-```
+```text
 Button/
 ├── Button.tsx           # Main component
 ├── Button.test.tsx      # Tests
