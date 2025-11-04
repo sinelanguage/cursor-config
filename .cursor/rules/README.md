@@ -5,6 +5,7 @@ This directory contains additional rule files that complement `.cursorrules` in 
 ## Purpose
 
 While `.cursorrules` contains the main AI agent configuration, you can create additional rule files here for:
+
 - Project-specific coding standards
 - Domain-specific patterns
 - Team-specific conventions
@@ -33,4 +34,3 @@ Cursor automatically reads files in this directory and combines them with `.curs
 2. **Reference main rules**: Don't duplicate `.cursorrules` content
 3. **Use clear naming**: File names should indicate the domain
 4. **Keep updated**: Update rules as standards evolve
-

@@ -9,6 +9,7 @@ This document describes the architecture for modern frontend applications built 
 ### Overview
 
 We use **Module Federation** to create microfrontend architectures where independent applications can share code at runtime. This enables:
+
 - Independent deployment of frontend modules
 - Code sharing and deduplication
 - Team autonomy and parallel development
@@ -19,6 +20,7 @@ We use **Module Federation** to create microfrontend architectures where indepen
 We support **both Module Federation v1 and v2** via the Vite plugin `@originjs/vite-plugin-federation` to ensure compatibility with existing systems while enabling modern capabilities.
 
 #### V1 - Classic Module Federation
+
 ```typescript
 // Exposes modules in standard MF pattern
 federation({
@@ -30,6 +32,7 @@ federation({
 ```
 
 #### V2 - Enhanced Module Federation
+
 ```typescript
 // Advanced features: shared context, better type safety
 federation({
@@ -60,6 +63,7 @@ graph TB
 ```
 
 **Responsibilities:**
+
 - Routes between remote modules
 - Provides shared context/state (if using React Context across federated modules)
 - Loads remote entry points
@@ -67,11 +71,13 @@ graph TB
 - Handles global UI (navigation, headers, footers)
 
 **Type Safety:**
+
 - Declare remote module types explicitly
 - Use type imports for remote components
 - Create type definitions for federated modules
 
 Example:
+
 ```typescript
 // types/remote-modules.d.ts
 declare module 'remote_app/Button' {

@@ -36,4 +36,3 @@ Customize this file for your project's specific needs:
 ## Maintenance
 
 Update this file as project standards evolve. Reference the main `.cursorrules` for general standards and add project-specific extensions here.
-

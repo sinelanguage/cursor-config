@@ -28,7 +28,7 @@ graph LR
 
 ### Branch Naming Conventions
 
-```
+```text
 <type>/<description>
 
 Types:
@@ -43,6 +43,7 @@ Types:
 ```
 
 **Examples:**
+
 - `feature/user-authentication`
 - `bugfix/memory-leak-in-chart`
 - `hotfix/critical-xss-vulnerability`
@@ -52,6 +53,7 @@ Types:
 ### Branch Lifecycle
 
 1. **Create branch from main**
+
    ```bash
    git checkout main
    git pull origin main
@@ -59,12 +61,14 @@ Types:
    ```
 
 2. **Make commits** (see Commit Convention)
+
    ```bash
    git add .
    git commit -m "feat: add user login component"
    ```
 
 3. **Push and create PR**
+
    ```bash
    git push -u origin feature/my-feature
    # Create PR on GitHub/GitLab
@@ -80,7 +84,7 @@ Types:
 
 Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
-```
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -170,6 +174,7 @@ Any additional context or information
 ### Code Review Standards
 
 **Review Focus Areas:**
+
 1. Code quality and readability
 2. Type safety and TypeScript usage
 3. Component patterns and architecture
@@ -180,6 +185,7 @@ Any additional context or information
 8. Documentation
 
 **Review Checklist:**
+
 - [ ] Code follows React best practices
 - [ ] Proper TypeScript types (no `any`)
 - [ ] No unnecessary re-renders
@@ -195,6 +201,7 @@ Any additional context or information
 ### GitHub Actions Workflows
 
 **CI Workflow** (`ci.yml`):
+
 ```yaml
 name: CI
 
@@ -216,6 +223,7 @@ jobs:
 ```
 
 **Security Workflow** (`security.yml`):
+
 ```yaml
 name: Security Scan
 
@@ -234,6 +242,7 @@ jobs:
 ```
 
 **A11y Workflow** (`a11y.yml`):
+
 ```yaml
 name: Accessibility
 
@@ -253,6 +262,7 @@ jobs:
 ### GitLab CI Configuration
 
 **`.gitlab-ci.yml`**:
+
 ```yaml
 stages:
   - lint
@@ -528,6 +538,7 @@ git tag -a v1.2.0 -m "Release v1.2.0
 ### Pre-commit Hooks
 
 Using Husky for git hooks:
+
 ```bash
 # Install husky
 npm install --save-dev husky
@@ -537,6 +548,7 @@ npx husky init
 ```
 
 **`.husky/pre-commit`**:
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -546,6 +558,7 @@ npm run type-check
 ```
 
 **`lint-staged` in `package.json`**:
+
 ```json
 {
   "lint-staged": {
@@ -560,6 +573,7 @@ npm run type-check
 ### Quality Thresholds
 
 CI/CD will fail if:
+
 - ❌ Lint errors exist
 - ❌ Type errors exist
 - ❌ Test coverage < 80%
@@ -579,6 +593,7 @@ CI/CD will fail if:
 ### Deployment Checklist
 
 Before deploying to production:
+
 - [ ] All tests passing in CI
 - [ ] Security scan passes
 - [ ] QA sign-off
@@ -602,6 +617,7 @@ npm run deploy:production
 ### Pair Programming
 
 When pairing:
+
 - Driver/Navigator pattern
 - Regular context switching
 - Use screen sharing tools

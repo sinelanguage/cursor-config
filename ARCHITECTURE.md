@@ -43,11 +43,13 @@ graph TB
 ### Architecture
 
 **Host Application** (Main orchestrator)
+
 - Port: 3000
 - Responsibilities: Routing, auth, global UI
 - Consumes remote modules dynamically
 
 **Remote Modules** (Independent microapps)
+
 - Ports: 3001, 3002, 3003...
 - Responsibilities: Feature-specific functionality
 - Expose components and utilities
@@ -55,7 +57,8 @@ graph TB
 
 ### Module Sharing Strategy
 
-**Shared Dependencies**
+#### Shared Dependencies
+
 ```typescript
 shared: {
   'react': {
@@ -74,15 +77,18 @@ shared: {
 ## State Management
 
 ### Local State
+
 - `useState` for simple component state
 - `useReducer` for complex state logic
 
 ### Context API
+
 - Theme preferences
 - User authentication
 - Global UI state (modals, notifications)
 
 ### External State (Optional)
+
 - **Zustand** for complex global state
 - **React Query** for server state
 
@@ -91,6 +97,7 @@ shared: {
 ### Client-Side Routing
 
 Using React Router v6 with:
+
 - Lazy loading for routes
 - Protected route guards
 - Route-based code splitting
@@ -123,7 +130,7 @@ function App() {
 
 ### Component Hierarchy
 
-```
+```text
 App
 ├── Layout
 │   ├── Header
@@ -141,7 +148,8 @@ App
 
 ### Component Patterns
 
-**Container/Presentational Pattern**
+#### Container/Presentational Pattern
+
 ```typescript
 // Container: Handles logic
 function UserProfileContainer() {
@@ -157,7 +165,8 @@ function UserProfile({ user, loading, error }) {
 }
 ```
 
-**Compound Components**
+#### Compound Components
+
 ```typescript
 <Card>
   <Card.Header>Title</Card.Header>
@@ -212,7 +221,7 @@ export function useUser(userId: string) {
 
 ### Bundle Strategy
 
-```
+```text
 app.js (< 200KB gzipped)
 ├── vendor chunk (React, ReactDOM)
 ├── router chunk
@@ -240,17 +249,20 @@ app.js (< 200KB gzipped)
 
 ### Optimization Strategies
 
-**Code Splitting**
+#### Code Splitting Strategy
+
 - Route-based splitting
 - Component lazy loading
 - Library chunk splitting
 
-**Asset Optimization**
+#### Asset Optimization
+
 - Image optimization (WebP, AVIF)
 - Font subsetting and preloading
 - CSS minification
 
-**Caching Strategy**
+#### Caching Strategy
+
 - Static assets: Long-term cache
 - HTML: No cache
 - API responses: Cache-Control headers
@@ -267,7 +279,7 @@ app.js (< 200KB gzipped)
 
 ### Test Pyramid
 
-```
+```text
          E2E Tests
         /          \
     Integration    \
@@ -339,7 +351,7 @@ app.js (< 200KB gzipped)
    - Test data
    - Staging API
 
-3. **Production** (www.example.com)
+3. **Production** (example.com)
    - Optimized build
    - Production API
    - CDN delivery
@@ -388,6 +400,7 @@ graph LR
 ### Clear Separation
 
 Each module should:
+
 - Have a single responsibility
 - Encapsulate its implementation
 - Expose a clear public API
@@ -424,4 +437,3 @@ Each module should:
 - [Workflows](.context/workflows.md)
 - [Code Conventions](.context/conventions.md)
 - [Technology Stack](.context/stack.md)
-

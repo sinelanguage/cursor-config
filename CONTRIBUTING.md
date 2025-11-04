@@ -13,28 +13,33 @@ Thank you for your interest in contributing! This document provides guidelines a
 ### Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone <repo-url>
    cd <project-name>
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.development
    # Edit .env.development with your local configuration
    ```
 
 4. **Start development server**
+
    ```bash
    npm run dev
    ```
 
 5. **Run tests** (in another terminal)
+
    ```bash
    npm run test
    ```
@@ -44,6 +49,7 @@ Thank you for your interest in contributing! This document provides guidelines a
 ### Git Workflow
 
 1. **Create a feature branch**
+
    ```bash
    git checkout main
    git pull origin main
@@ -56,6 +62,7 @@ Thank you for your interest in contributing! This document provides guidelines a
    - Update documentation
 
 3. **Run quality checks locally**
+
    ```bash
    npm run lint        # Check for linting errors
    npm run type-check  # Check TypeScript types
@@ -64,16 +71,20 @@ Thank you for your interest in contributing! This document provides guidelines a
    ```
 
 4. **Commit your changes**
+
    ```bash
    git add .
    git commit -m "feat: add your feature description"
    ```
+
    Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
 5. **Push and create pull request**
+
    ```bash
    git push -u origin feature/your-feature-name
    ```
+
    Then create a Pull Request on GitHub/GitLab.
 
 ### Before Submitting
@@ -115,16 +126,17 @@ Ensure all of the following pass:
 
 See `.context/conventions.md` for detailed conventions.
 
-### Testing
+### Testing Standards
 
 - **Unit tests**: Test utility functions and hooks
 - **Component tests**: Test user interactions, not implementation
 - **E2E tests**: Test critical user journeys
 - **Coverage**: Aim for >80% coverage
 
-### Accessibility
+### Accessibility Requirements
 
 All components must:
+
 - Use semantic HTML
 - Support keyboard navigation
 - Provide ARIA attributes when needed
@@ -135,7 +147,7 @@ All components must:
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -144,6 +156,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 **Types**:
+
 - `feat` - New feature
 - `fix` - Bug fix
 - `docs` - Documentation
@@ -155,7 +168,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 - `a11y` - Accessibility improvements
 
 **Example**:
-```
+
+```text
 feat(button): add loading state to primary button
 
 Add spinner animation when button is in loading state.
@@ -208,7 +222,7 @@ Brief description of changes
 
 ## Project Structure
 
-```
+```text
 src/
 ├── components/     # Reusable UI components
 ├── hooks/         # Custom React hooks
@@ -229,6 +243,7 @@ tests/
 ### VS Code
 
 Recommended extensions:
+
 - ESLint
 - Prettier
 - TypeScript
@@ -286,4 +301,3 @@ Recommended extensions:
 - [Technology Stack](.context/stack.md)
 
 Thank you for contributing!
-

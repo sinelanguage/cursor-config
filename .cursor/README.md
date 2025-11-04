@@ -4,7 +4,7 @@ This directory contains workspace-specific settings and configurations for Curso
 
 ## Directory Structure
 
-```
+```text
 .cursor/
 ├── README.md           # This file
 ├── settings.json       # Workspace settings (VS Code compatible)
@@ -16,18 +16,21 @@ This directory contains workspace-specific settings and configurations for Curso
 ## Files
 
 ### `.cursorignore`
+
 **Location**: Project root (sibling to `.cursor/`)  
 **Purpose**: Controls which files Cursor indexes for AI context  
 **Format**: `.gitignore` syntax  
 **When to use**: Exclude large or irrelevant files from AI indexing
 
 ### `settings.json`
+
 **Location**: `.cursor/settings.json`  
 **Purpose**: Workspace-specific IDE settings  
 **Format**: VS Code-compatible JSON  
 **Contains**: Editor, TypeScript, ESLint, Prettier, and testing settings
 
 ### `rules/` Directory
+
 **Location**: `.cursor/rules/`  
 **Purpose**: Additional rule files that complement `.cursorrules`  
 **Format**: Markdown files (`.md` or `.mdc`)  
@@ -79,6 +82,7 @@ Create a new `.md` file in `.cursor/rules/`:
 ### Modifying Settings
 
 Edit `.cursor/settings.json` to customize:
+
 - Editor behavior
 - TypeScript settings
 - Linter configuration
@@ -88,6 +92,7 @@ Edit `.cursor/settings.json` to customize:
 ### Updating Ignore Patterns
 
 Edit `.cursorignore` to exclude:
+
 - Large generated files
 - Build outputs
 - Test artifacts
@@ -132,4 +137,3 @@ Edit `.cursorignore` to exclude:
 - [Cursor Documentation](https://docs.cursor.com/)
 - [SETUP.md](../SETUP.md) - Setup instructions
 - [README.md](../README.md) - Project overview
-

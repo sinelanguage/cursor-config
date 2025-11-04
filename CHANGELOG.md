@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-01-15
 
-### Added
+### Added (v1.0.0)
 
 - Initial release of Principal Frontend Cursor AI Setup
 - Comprehensive `.cursorrules` configuration for principal frontend development
@@ -140,4 +140,3 @@ Update the changelog for:
 ---
 
 For more information about changelog maintenance, see [Keep a Changelog](https://keepachangelog.com/).
-
